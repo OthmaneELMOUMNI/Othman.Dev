@@ -55,6 +55,8 @@ MAIL_FROM_ADDRESS=your-gmail-address@gmail.com
 
 For Gmail, create an app password in your Google account and use it as `MAIL_PASSWORD`. Do not use your normal Gmail password.
 
+On Vercel, add these same values in Project Settings -> Environment Variables, then redeploy. Local `.env` values are not uploaded to Vercel.
+
 ### Run Locally
 
 ```bash
