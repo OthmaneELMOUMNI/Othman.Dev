@@ -90,6 +90,9 @@ export const translations = {
       projectType: "Project Type",
       message: "Your Message",
       send: "Send Message",
+      sending: "Sending...",
+      success: "Message sent. I'll reply soon.",
+      error: "Message failed. Please email me directly.",
       types: ["Full Stack Web App", "API Development", "E-commerce Solution", "SaaS Infrastructure", "Other"]
     },
     footer: {
@@ -184,6 +187,9 @@ export const translations = {
       projectType: "Type de Projet",
       message: "Votre Message",
       send: "Envoyer le Message",
+      sending: "Envoi...",
+      success: "Message envoye. Je vous repondrai bientot.",
+      error: "Echec de l'envoi. Envoyez-moi un email directement.",
       types: ["App Web Full Stack", "Développement API", "Solution E-commerce", "Infrastructure SaaS", "Autre"]
     },
     footer: {

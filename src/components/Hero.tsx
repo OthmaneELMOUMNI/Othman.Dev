@@ -4,7 +4,7 @@
  */
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "motion/react";
-import { useRef } from "react";
+import { useRef, type MouseEvent } from "react";
 import { ArrowRight, Database, Terminal } from "lucide-react";
 import { useApp } from "../AppContext";
 
@@ -218,7 +218,7 @@ export default function Hero() {
     }
   ];
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseMove = (e: MouseEvent) => {
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
     

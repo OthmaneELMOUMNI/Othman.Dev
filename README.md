@@ -39,13 +39,21 @@ If you want to override local settings, copy `.env.example` to `.env`:
 cp .env.example .env
 ```
 
-The starter app currently supports the following environment variable:
+The contact form sends messages to `othmanemoumni5@gmail.com`. To enable delivery, configure SMTP settings in `.env`:
 
 ```env
 DISABLE_HMR=true
+PORT=3001
+CONTACT_TO_EMAIL=othmanemoumni5@gmail.com
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_SECURE=true
+MAIL_USERNAME=your-gmail-address@gmail.com
+MAIL_PASSWORD=your-gmail-app-password
+MAIL_FROM_ADDRESS=your-gmail-address@gmail.com
 ```
 
-This is optional and only needed if you want to disable hot module reloading for the Vite dev server.
+For Gmail, create an app password in your Google account and use it as `MAIL_PASSWORD`. Do not use your normal Gmail password.
 
 ### Run Locally
 
