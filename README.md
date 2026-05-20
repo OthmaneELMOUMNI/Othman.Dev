@@ -31,6 +31,22 @@ A modern personal portfolio website built with React, Vite, and Tailwind CSS. Th
 npm install
 ```
 
+### Environment
+
+If you want to override local settings, copy `.env.example` to `.env`:
+
+```bash
+cp .env.example .env
+```
+
+The starter app currently supports the following environment variable:
+
+```env
+DISABLE_HMR=true
+```
+
+This is optional and only needed if you want to disable hot module reloading for the Vite dev server.
+
 ### Run Locally
 
 ```bash
