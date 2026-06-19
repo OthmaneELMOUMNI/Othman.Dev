@@ -39,6 +39,16 @@ const projects = [
     link: "https://w4j.yool.education/",
     github: githubProfile,
     tags: ["Education", "Platform", "Laravel", "UI/UX"]
+  },
+  {
+    title: "Oussama Pchiw",
+    category: "Fitness Coaching Website",
+    domain: "pchiw.netlify.app",
+    image: "/project-screenshots/pchiw.png",
+    description: "A bold personal trainer website built to present coaching disciplines, pricing, results, and direct contact paths for new clients.",
+    link: "https://pchiw.netlify.app/",
+    github: githubProfile,
+    tags: ["React", "Vite", "Fitness", "Responsive"]
   }
 ];
 
@@ -79,7 +89,7 @@ export default function Projects() {
           </motion.p>
         </div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {projects.map((project, i) => (
             <motion.li
               key={project.title}

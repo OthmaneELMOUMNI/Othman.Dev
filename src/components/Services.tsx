@@ -9,14 +9,32 @@ import { useApp } from "../AppContext";
 
 export default function Services() {
   const { t } = useApp();
-  
+
   const icons = [
-    <Code className="text-purple-600 dark:text-purple-400" />,
-    <Zap className="text-amber-600 dark:text-amber-400" />,
-    <Smartphone className="text-blue-600 dark:text-blue-400" />,
-    <Shield className="text-red-600 dark:text-red-400" />,
-    <Search className="text-emerald-600 dark:text-emerald-400" />,
-    <Palette className="text-rose-600 dark:text-rose-400" />,
+    {
+      icon: <Code />,
+      className: "bg-purple-500/10 text-purple-600 group-hover:bg-purple-600 group-hover:text-white dark:bg-purple-400/10 dark:text-purple-300",
+    },
+    {
+      icon: <Zap />,
+      className: "bg-amber-500/10 text-amber-600 group-hover:bg-amber-500 group-hover:text-slate-950 dark:bg-amber-400/10 dark:text-amber-300",
+    },
+    {
+      icon: <Smartphone />,
+      className: "bg-sky-500/10 text-sky-600 group-hover:bg-sky-600 group-hover:text-white dark:bg-sky-400/10 dark:text-sky-300",
+    },
+    {
+      icon: <Shield />,
+      className: "bg-red-500/10 text-red-600 group-hover:bg-red-600 group-hover:text-white dark:bg-red-400/10 dark:text-red-300",
+    },
+    {
+      icon: <Search />,
+      className: "bg-emerald-500/10 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-400/10 dark:text-emerald-300",
+    },
+    {
+      icon: <Palette />,
+      className: "bg-rose-500/10 text-rose-600 group-hover:bg-rose-600 group-hover:text-white dark:bg-rose-400/10 dark:text-rose-300",
+    },
   ];
 
   return (
@@ -57,8 +75,8 @@ export default function Services() {
                 transition={{ delay: i * 0.1 }}
                 className="p-8 rounded-3xl glass-card group cursor-pointer transition-shadow"
               >
-                <div className={`p-4 bg-blue-500/5 dark:bg-blue-500/10 rounded-2xl w-fit mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300`}>
-                  {icons[i]}
+                <div className={`p-4 rounded-2xl w-fit mb-6 transition-all duration-300 ${icons[i].className}`}>
+                  {icons[i].icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">{service.title}</h3>
                 <p className="text-slate-600 dark:text-slate-50 text-sm leading-relaxed">

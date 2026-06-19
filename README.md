@@ -51,9 +51,13 @@ MAIL_SECURE=true
 MAIL_USERNAME=your-gmail-address@gmail.com
 MAIL_PASSWORD=your-gmail-app-password
 MAIL_FROM_ADDRESS=your-gmail-address@gmail.com
+CONTACT_ALLOWED_ORIGINS=http://localhost:3000
+CONTACT_RATE_LIMIT_WINDOW_MS=600000
+CONTACT_RATE_LIMIT_MAX=5
 ```
 
 For Gmail, create an app password in your Google account and use it as `MAIL_PASSWORD`. Do not use your normal Gmail password.
+`CONTACT_ALLOWED_ORIGINS` is optional but recommended in production to restrict the contact endpoint to your site origin. The rate-limit variables control the in-memory request cap per IP address.
 
 On Vercel, add these same values in Project Settings -> Environment Variables, then redeploy. Local `.env` values are not uploaded to Vercel.
 

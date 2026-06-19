@@ -39,6 +39,46 @@ export default function Hero() {
   const cellTiltY = useTransform(smoothMouseX, [-0.5, 0.5], ["-10deg", "10deg"]);
   const orbitTransition = { duration: 30, repeat: Infinity, ease: "linear" as const };
   const techCardClass = "flex h-16 w-16 md:h-20 md:w-20 items-center justify-center drop-shadow-[0_18px_32px_rgba(2,6,23,0.45)] [backface-visibility:hidden]";
+  const heroDetails = (
+    <>
+      <p className="text-slate-600 dark:text-slate-50 text-sm md:text-base max-w-lg mb-10 leading-relaxed font-medium">
+        {t.hero.desc}
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4">
+        <motion.a
+          href="#projects"
+          aria-label="View Othmane's portfolio projects"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-[0_10px_30px_rgba(37,99,235,0.2)]"
+        >
+          {t.hero.viewWork}
+          <ArrowRight size={20} aria-hidden="true" />
+        </motion.a>
+        <motion.a
+          href="#contact"
+          aria-label="Get in touch with Othmane"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="px-8 py-4 bg-white dark:bg-slate-800/90 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-600 rounded-xl font-bold flex items-center justify-center gap-2 transition-all backdrop-blur-sm shadow-[0_4px_10px_rgba(0,0,0,0.02)]"
+        >
+          {t.hero.talk}
+        </motion.a>
+      </div>
+
+      <div className="mt-12 flex gap-8">
+        <div>
+          <div className="text-3xl font-display font-bold text-slate-900 dark:text-white">50+</div>
+          <div className="text-sm text-slate-500 dark:text-slate-50 uppercase tracking-widest font-bold">{t.hero.projects}</div>
+        </div>
+        <div>
+          <div className="text-3xl font-display font-bold text-slate-900 dark:text-white">4+</div>
+          <div className="text-sm text-slate-500 dark:text-slate-50 uppercase tracking-widest font-bold">{t.hero.experience}</div>
+        </div>
+      </div>
+    </>
+  );
   const techNodes = [
     {
       key: "php",
@@ -259,49 +299,16 @@ export default function Hero() {
             <br />
             <span className="text-blue-700 dark:text-blue-200 font-mono text-xl md:text-2xl mt-4 block">{t.hero.title}</span>
           </h1>
-          
-          <p className="text-slate-600 dark:text-slate-50 text-sm md:text-base max-w-lg mb-10 leading-relaxed font-medium">
-            {t.hero.desc}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4">
-            <motion.a
-              href="#projects"
-              aria-label="View Othmane's portfolio projects"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-[0_10px_30px_rgba(37,99,235,0.2)]"
-            >
-              {t.hero.viewWork}
-              <ArrowRight size={20} aria-hidden="true" />
-            </motion.a>
-            <motion.a
-              href="#contact"
-              aria-label="Get in touch with Othmane"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-white dark:bg-slate-800/90 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-600 rounded-xl font-bold flex items-center justify-center gap-2 transition-all backdrop-blur-sm shadow-[0_4px_10px_rgba(0,0,0,0.02)]"
-            >
-              {t.hero.talk}
-            </motion.a>
-          </div>
-          
-          <div className="mt-12 flex gap-8">
-            <div>
-              <div className="text-3xl font-display font-bold text-slate-900 dark:text-white">50+</div>
-              <div className="text-sm text-slate-500 dark:text-slate-50 uppercase tracking-widest font-bold">{t.hero.projects}</div>
-            </div>
-            <div>
-              <div className="text-3xl font-display font-bold text-slate-900 dark:text-white">4+</div>
-              <div className="text-sm text-slate-500 dark:text-slate-50 uppercase tracking-widest font-bold">{t.hero.experience}</div>
-            </div>
+
+          <div className="hidden lg:block">
+            {heroDetails}
           </div>
         </motion.div>
         
         {/* Tech Cells Orbit */}
         <motion.div 
           style={{ x: cellMoveX, y: cellMoveY, rotateX: cellTiltX, rotateY: cellTiltY, transformStyle: "preserve-3d" }}
-          className="relative h-[520px] lg:h-[620px] flex items-center justify-center [perspective:1200px]"
+          className="relative h-[460px] sm:h-[500px] lg:h-[620px] flex items-center justify-center [perspective:1200px]"
         >
           {/* Background Pulsing Glows */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-500/20 dark:bg-blue-400/10 rounded-full blur-[100px] animate-pulse" />
@@ -371,6 +378,16 @@ export default function Hero() {
               }}
             />
           ))}
+        </motion.div>
+
+        <motion.div
+          style={{ opacity, x: moveX, y: moveY }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+          className="z-10 -mt-16 lg:hidden"
+        >
+          {heroDetails}
         </motion.div>
       </div>
       

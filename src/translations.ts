@@ -28,7 +28,7 @@ export const translations = {
       title1: "Transforming Complex Logic",
       title2: "into Elegant Solutions",
       desc1: "I'm Othmane, a passionate Full Stack Developer with a specialized focus on the Laravel ecosystem. My journey in tech started with a curiosity for how complex systems work, which evolved into a career building them.",
-      desc2: "I believe that great software is more than just code—it's a solution to a human problem. That's why I prioritize clean architecture, security, and performance in every line I write.",
+      desc2: "I believe that great software is more than just code - it's a solution to a human problem. That's why I prioritize clean architecture, security, and performance in every line I write.",
       fullstack: "Full Stack",
       scalability: "Scalability",
       philosophy: "My Philosophy",
@@ -79,7 +79,7 @@ export const translations = {
     },
     contact: {
       subtitle: "Get In Touch",
-      title1: "Let’s build something",
+      title1: "Let's build something",
       title2: "Legendary together.",
       desc: "Have a project in mind or just want to chat about tech? Feel free to reach out. I'm always open to new opportunities and collaborations.",
       email: "Email",
@@ -125,7 +125,7 @@ export const translations = {
       title1: "Transformer la Logique",
       title2: "en Solutions Élégantes",
       desc1: "Je suis Othmane, un développeur Full Stack passionné, spécialisé dans l'écosystème Laravel. Mon parcours a débuté par une curiosité pour le fonctionnement des systèmes complexes.",
-      desc2: "Je crois qu'un excellent logiciel est plus qu'un simple code—c'est une solution à un problème humain. C'est pourquoi je priorise l'architecture propre, la sécurité et la performance.",
+      desc2: "Je crois qu'un excellent logiciel est plus qu'un simple code - c'est une solution à un problème humain. C'est pourquoi je priorise l'architecture propre, la sécurité et la performance.",
       fullstack: "Full Stack",
       scalability: "Évolutivité",
       philosophy: "Ma Philosophie",
@@ -188,8 +188,8 @@ export const translations = {
       message: "Votre Message",
       send: "Envoyer le Message",
       sending: "Envoi...",
-      success: "Message envoye. Je vous repondrai bientot.",
-      error: "Echec de l'envoi. Envoyez-moi un email directement.",
+      success: "Message envoyé. Je vous répondrai bientôt.",
+      error: "Échec de l'envoi. Envoyez-moi un email directement.",
       types: ["App Web Full Stack", "Développement API", "Solution E-commerce", "Infrastructure SaaS", "Autre"]
     },
     footer: {

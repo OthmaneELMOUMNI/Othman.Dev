@@ -22,6 +22,7 @@ export default function Contact() {
       email: String(formData.get("email") || ""),
       projectType: String(formData.get("projectType") || ""),
       message: String(formData.get("message") || ""),
+      company: String(formData.get("company") || ""),
     };
 
     try {
@@ -146,6 +147,18 @@ export default function Contact() {
                   placeholder="..." 
                   required
                   className="w-full px-6 py-4 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-1 focus:ring-blue-500 dark:focus:ring-blue-400 outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-400 text-slate-900 dark:text-white resize-none"
+                />
+              </div>
+
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="form-company">Company</label>
+                <input
+                  id="form-company"
+                  name="company"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
                 />
               </div>
 

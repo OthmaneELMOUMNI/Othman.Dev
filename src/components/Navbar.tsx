@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Github, Linkedin, Sun, Moon, Globe } from "lucide-react";
+import { Menu, X, Github, Sun, Moon, Globe } from "lucide-react";
 import { useApp } from "../AppContext";
 
 const githubProfile = "https://github.com/OthmaneELMOUMNI";
@@ -33,16 +33,16 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav 
+    <nav
       aria-label="Main Navigation"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-white/5 py-3 shadow-[0_2px_20px_rgba(0,0,0,0.02)]" 
+        scrolled
+          ? "bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-white/5 py-3 shadow-[0_2px_20px_rgba(0,0,0,0.02)]"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <motion.a 
+        <motion.a
           href="#home"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -51,7 +51,6 @@ export default function Navbar() {
           OTHMANE<span className="text-slate-400 dark:text-white/40 font-light">.</span>DEV
         </motion.a>
 
-        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link, i) => (
             <motion.a
@@ -66,9 +65,8 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 dark:bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
             </motion.a>
           ))}
-          
+
           <div className="flex items-center gap-4 ml-4 pl-4 border-l border-slate-200 dark:border-white/10">
-            {/* Language Toggle */}
             <button
               onClick={() => setLanguage(language === "en" ? "fr" : "en")}
               aria-label={`Switch language to ${language === "en" ? "French" : "English"}`}
@@ -78,7 +76,6 @@ export default function Navbar() {
               {language}
             </button>
 
-            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
@@ -87,33 +84,37 @@ export default function Navbar() {
               {theme === "dark" ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
             </button>
 
-            <a href={githubProfile} target="_blank" rel="noreferrer" aria-label="Github Profile" className="text-slate-400 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <a
+              href={githubProfile}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Github Profile"
+              className="text-slate-400 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
               <Github size={18} aria-hidden="true" />
             </a>
           </div>
         </div>
 
-        {/* Mobile Toggle */}
         <div className="flex items-center gap-4 lg:hidden">
-           <button
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="p-2 rounded-xl glass-card text-slate-600 dark:text-slate-200"
-            >
-              {theme === "dark" ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
-            </button>
-            <button 
-              className="p-2 rounded-xl glass-card text-slate-600 dark:text-white"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-expanded={isOpen}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-            </button>
+          <button
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            className="p-2 rounded-xl glass-card text-slate-600 dark:text-slate-200"
+          >
+            {theme === "dark" ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
+          </button>
+          <button
+            className="p-2 rounded-xl glass-card text-slate-600 dark:text-white"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -146,10 +147,15 @@ export default function Navbar() {
                   <span className="uppercase font-bold">{language === "en" ? "Français" : "English"}</span>
                 </button>
                 <div className="flex gap-4">
-                  <a href={githubProfile} target="_blank" rel="noreferrer" aria-label="Github Profile" className="text-slate-400 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors">
+                  <a
+                    href={githubProfile}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Github Profile"
+                    className="text-slate-400 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors"
+                  >
                     <Github size={24} aria-hidden="true" />
                   </a>
-                  <Linkedin size={24} className="text-slate-400 dark:text-slate-200" />
                 </div>
               </div>
             </div>
