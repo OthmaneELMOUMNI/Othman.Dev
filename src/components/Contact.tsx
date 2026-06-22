@@ -4,13 +4,15 @@
  */
 
 import { motion } from "motion/react";
-import { Mail, Send, MapPin } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { useApp } from "../AppContext";
 
 export default function Contact() {
   const { t } = useApp();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const whatsappDisplay = "0706822429";
+  const whatsappUrl = "https://wa.me/212706822429";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -81,6 +83,22 @@ export default function Contact() {
                   <div className="text-lg text-slate-900 dark:text-white font-medium">othmanemoumni5@gmail.com</div>
                 </div>
               </div>
+
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-6 group"
+                aria-label={`Contact Othmane on WhatsApp at ${whatsappDisplay}`}
+              >
+                <div className="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-emerald-600 dark:text-emerald-300 group-hover:bg-emerald-600 group-hover:text-white transition-all font-bold shadow-sm">
+                  <MessageCircle size={24} />
+                </div>
+                <div>
+                  <div className="text-sm text-slate-500 dark:text-slate-100 uppercase tracking-widest font-bold">{t.contact.whatsapp}</div>
+                  <div className="text-lg text-slate-900 dark:text-white font-medium">{whatsappDisplay}</div>
+                </div>
+              </a>
               
               <div className="flex items-center gap-6 group">
                 <div className="w-14 h-14 rounded-2xl glass-card flex items-center justify-center text-indigo-600 dark:text-blue-400 group-hover:bg-indigo-600 group-hover:text-white transition-all font-bold shadow-sm">

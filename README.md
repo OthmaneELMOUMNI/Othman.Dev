@@ -8,6 +8,11 @@ A modern personal portfolio website built with React, Vite, and Tailwind CSS. Th
 - animated navigation and UI interactions using `motion`
 - accessible mobile menu and smooth scrolling layout
 
+## Contact
+
+- Email: `othmanemoumni5@gmail.com`
+- WhatsApp: `0706822429`
+
 ## Technologies
 
 - React 19
